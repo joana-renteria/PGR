@@ -1,3 +1,7 @@
+// autora: Joana Renteria
+// para la clase de PGR
+// el dia 26 de septiembre
+
 package ejercicios;
 
 import java.util.Scanner;
