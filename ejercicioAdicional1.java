@@ -7,11 +7,11 @@ public class ejercicioAdicional1 {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		notaMediaFinal();
+		notaMediaFinal();								// llamada a metodo principal
 	}
 
-	public static void notaOut(float nota, String nombre, String actStr) {
-		String notaEscrita;
+	public static void notaOut(float nota, String nombre, String actStr) {			// elige la nota y la printea
+		String notaEscrita;								// junto con el resto de info
 		if (nota < 5) {
 			notaEscrita = "insuficiente";
 		} else {
@@ -32,11 +32,11 @@ public class ejercicioAdicional1 {
 	public static String actitud() {
 		System.out.println("Introduce la actitud de le alumne: ");
 		String actitud = sc.next();
-		actitud = actitud.toUpperCase();
-		String result;
-
-		switch((char) actitud.getBytes()[0]) {
-			case 'A':
+		actitud = actitud.toUpperCase();						// convierte a mayusculas
+		String result;									// de esta forma solo tenemos que
+												//considerar 4 casos
+		switch((char) actitud.getBytes()[0]) {						// coge solo el primer caracter
+			case 'A':								// el casteo a char es redundante
 				result = "Actitud muy buena";
 				break;
 			case 'B':
@@ -52,7 +52,7 @@ public class ejercicioAdicional1 {
 				result = "La actitud no ha sido tenida en cuenta";
 				break;
 		}
-		return result;
+		return result;									// devolvemos string con la actitud
 	}
 	
 	public static void notaMediaFinal() {
@@ -60,12 +60,12 @@ public class ejercicioAdicional1 {
 		System.out.println("Introduce el nombre de le alumne: ");
 		String nombre = sc.next();
 		
-		for(int i = 0; i < 3; i++) {
-			System.out.println("Introduce la " + (i+1) + ". nota [0-10]: ");
+		for(int i = 0; i < 3; i++) {							// pedimos las notas usando un bucle
+			System.out.println("Introduce la " + (i+1) + ". nota [0-10]: ");	//para no repetir codigo
 			input = sc.nextFloat();
 			nota = nota + ((input > 10) ? 10 : input);
 		}
-		notaOut((nota/3), nombre, actitud());
+		notaOut((nota/3), nombre, actitud());						// calculamos la media en llamada a funcion
 	}
 
 }
