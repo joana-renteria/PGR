@@ -53,6 +53,29 @@ public class Main {
 			numeros[i] = inputInt(50,500);
 			numeros2[i] = numeros[i]*2;
 		}
+		printArray(numeros);
+		printArray(nnumeros2);
 	}
-
+	
+	public static void ejercicioB() {
+		int n;
+		String s;
+		do {
+			System.out.println("Introduce nº: ");
+			n = inputInt();
+			if(n >= 0)
+				for(int i = 0; i < n; i++)
+					System.out.print("*");
+			else
+				System.out.println("?");
+			System.out.println();
+			System.out.println("¿Quieres continint introduciendo números (S/s -->SI N/n -->NO)?:");
+			s = inputString();
+		} while(!s.equals("n") || !s.equals("N"));
+	}
+	
+	public static void ejercicioC() {
+		int[] n = leerArray();
+	}
+	
 }
